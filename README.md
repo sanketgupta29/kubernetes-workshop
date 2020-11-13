@@ -10,18 +10,18 @@ Prerequisites
 ## Set up
 - Open the azuredevops project with codespaces. Create a personal codespace and wait until it is configured (2 - 3 minutes)
 - Open this Readme file
-- Follow the instruction to login in to subscription UEPOC2 to cluster cmcaks-poc-001
+- Follow the instruction to login in to subscription "" to cluster ""
 - Login from the command line:
   - az login
-  - az account set --subscription d4665e52-c01b-4bdf-aa11-3da2eac23394
-  - az aks get-credentials --resource-group cmcaks-paas-poc-rgp-001 --name cmcaks-poc-001
+  - az account set --subscription ""
+  - az aks get-credentials --resource-group "" --name ""
 - run 'kubectl get ns' to see the namespaces of the cluster
 - run 'kubectl -n {your_namespace_name} get pods' to see your pods.
   
 ## Exercises
 ### 0. Setup
 - Check access to the cluster
-  - After you run "az aks get-credentials --resource-group cmcaks-paas-poc-rgp-001 --name cmcaks-poc-001", you will be asked to go to a URL and enter the code, if you do not see any error, it means you have access to the cluster.
+  - After you run "az aks get-credentials --resource-group "" --name "" ", you will be asked to go to a URL and enter the code, if you do not see any error, it means you have access to the cluster.
 - See pods and deployments
   - Run
     - kubectl get deployments -n {your_namespace_name} #Lists all the deployments in your namespace, in this case, you are supposed to see "devopsdemo"
@@ -60,7 +60,7 @@ Prerequisites
     - kubectl get pods -n "your namespace name"
     - Your partner is supposed to get: namespaces "your namespace name" is forbidden error.
 - Add a user (to allow access to your namespace)
-  - Edit file namespace-admin-rbg.yaml, add the user's KID (all upper case except uniper.energy. Ex. S47656@uniper.energy) in the subjects section, one of them should be yours. Run the following command:
+  - Edit file namespace-admin-rbg.yaml, add the user's KID (all upper case except uniper.energy. Ex. ""@uniper.energy) in the subjects section, one of them should be yours. Run the following command:
   - kubectl apply -f namespace-admin-rbg.yaml -n "your namespace name"
   - After running the above command, the user will have access to your namespace. Check by running the following command:
   - kubectl get pods -n "your namespace name"
